@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="de"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Rechner.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PP</a> &gt; <a href="index.source.html" class="el_package">de.regnator.PP</a> &gt; <span class="el_source">Rechner.java</span></div><h1>Rechner.java</h1><pre class="source lang-java linenums">package de.regnator.PP;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
+/**
+ * @author Sebastian 
+ * @version 1.0
+ */
+<span class="fc" id="L12">public class Rechner implements Calculator {</span>
+
+<span class="fc" id="L14">	private static Logger log = Logger.getLogger(Rechner.class.getName());</span>
+	
+	public int add(int zahl1, int zahl2) {
+		int ergebniss;
+<span class="fc" id="L18">		ergebniss = zahl1 + zahl2;</span>
+<span class="fc" id="L19">		System.out.printf(&quot; Es wurde erfolgreich &quot;, zahl1 , &quot;mit&quot; , zahl2, &quot;addiert&quot;   );</span>
+<span class="fc" id="L20">		log.finest(&quot;Das Ergebnis ist &quot; + ergebniss);</span>
+<span class="fc" id="L21">		return ergebniss;</span>
+	}
+	
+	public int subtract(int zahl1, int zahl2) {
+		int ergebniss;
+<span class="fc" id="L26">		ergebniss = zahl1 - zahl2;</span>
+<span class="fc" id="L27">		System.out.printf(&quot; Es wurde erfolgreich &quot;, zahl1 , &quot;mit&quot; , zahl2, &quot;addiert&quot;   );</span>
+<span class="fc" id="L28">		log.finest(&quot;Das Ergebnis ist &quot; + ergebniss);</span>
+<span class="fc" id="L29">		return ergebniss;</span>
+	}
+	
+	public int multiply(int zahl1, int zahl2) {
+		int ergebniss;
+<span class="fc" id="L34">		ergebniss = zahl1 * zahl2;</span>
+<span class="fc" id="L35">		System.out.printf(&quot; Es wurde erfolgreich &quot;, zahl1 , &quot;mit&quot; , zahl2, &quot;addiert&quot;   );</span>
+<span class="fc" id="L36">		log.finest(&quot;Das Ergebnis ist &quot; + ergebniss);</span>
+<span class="fc" id="L37">		return ergebniss;</span>
+	}
+	
+	public float divide(int zahl1, int zahl2)
+			throws DivisionByZeroNotAllowedException {
+<span class="fc" id="L42">		float ergebniss = 0;</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">		if(zahl2==0){</span>
+<span class="fc" id="L44">			System.out.printf(&quot; Die DivisionByZeroNotAllowedException wird geworfen &quot; );</span>
+<span class="fc" id="L45">			throw new DivisionByZeroNotAllowedException();</span>
+		}
+<span class="fc" id="L47">		log.finest(&quot;Das Ergebnis ist &quot; + ergebniss);</span>
+<span class="fc" id="L48">		System.out.printf(&quot; Die DivisionByZeroNotAllowedException wurde nicht geworfen &quot; );</span>
+<span class="fc" id="L49">		return ergebniss;</span>
+	}
+	public boolean isEven(int zahl) {
+<span class="fc bfc" id="L52" title="All 2 branches covered.">		if( (zahl&amp;1) == 0){ </span>
+<span class="fc" id="L53">			System.out.printf(&quot; Die eingegebene Zahl ist gerade &quot; , zahl); </span>
+<span class="fc" id="L54">			return true;</span>
+        }else{ 
+<span class="fc" id="L56">        	System.out.printf(&quot; Die eingegebene Zahl ist ungerade &quot;, zahl);</span>
+<span class="fc" id="L57">        	return false;</span>
+        }
+	}
+	
+	public static void main(String[] args) {
+<span class="nc" id="L62">		setuplogger();</span>
+		//isEvenDebug();
+<span class="nc" id="L64">	}</span>
+	/*public static void isEvenDebug(){
+		Rechner t1 = new Rechner();
+		t1.isEven(1);
+		
+	}
+	*/
+	private static void setuplogger(){
+<span class="nc" id="L72">		final InputStream is = Rechner.class</span>
+<span class="nc" id="L73">				.getResourceAsStream(&quot;log.properties&quot;);</span>
+				try{
+<span class="nc" id="L75">					LogManager.getLogManager().readConfiguration(is);</span>
+				}
+<span class="nc" id="L77">				catch(final IOException e){</span>
+<span class="nc" id="L78">					Logger.getAnonymousLogger().severe(&quot;Konnte keine log.properties finden!&quot;);</span>
+<span class="nc" id="L79">					Logger.getAnonymousLogger().severe(e.getMessage());</span>
+<span class="nc" id="L80">				}</span>
+<span class="nc" id="L81">		}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>

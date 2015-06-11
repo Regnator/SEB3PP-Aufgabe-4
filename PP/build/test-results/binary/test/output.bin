@@ -1,0 +1,7 @@
+p Die eingegebene Zahl ist gerade  Die eingegebene Zahl ist ungerade  Der Testfall EvenCheck wurde durchlaufen 
+p Die eingegebene Zahl ist gerade  Die eingegebene Zahl ist ungerade  Der Testfall EvenCheck wurde durchlaufen 
+< Es wurde erfolgreich  Der Testfall add wurde durchlaufen 
+A Es wurde erfolgreich  Der Testfall subtract wurde durchlaufen 
+_ Die DivisionByZeroNotAllowedException wird geworfen  Es wurde versucht durch Null zu teilen 
+A Es wurde erfolgreich  Der Testfall multiply wurde durchlaufen 
+e Die DivisionByZeroNotAllowedException wurde nicht geworfen  Der Testfall divide wurde durchlaufen 

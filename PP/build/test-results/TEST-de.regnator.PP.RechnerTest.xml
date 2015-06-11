@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="de.regnator.PP.RechnerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2015-06-11T06:33:44" hostname="Ultimate-Laptop" time="0.04">
+  <properties/>
+  <testcase name="testEven" classname="de.regnator.PP.RechnerTest" time="0.02"/>
+  <testcase name="testMain" classname="de.regnator.PP.RechnerTest" time="0.0"/>
+  <testcase name="testaddition" classname="de.regnator.PP.RechnerTest" time="0.0"/>
+  <testcase name="testsubstraction" classname="de.regnator.PP.RechnerTest" time="0.0"/>
+  <testcase name="testDivisionByZeroNotAllowedException" classname="de.regnator.PP.RechnerTest" time="0.01"/>
+  <testcase name="testmultipication" classname="de.regnator.PP.RechnerTest" time="0.0"/>
+  <testcase name="testdivide" classname="de.regnator.PP.RechnerTest" time="0.0"/>
+  <system-out><![CDATA[ Die eingegebene Zahl ist gerade  Die eingegebene Zahl ist ungerade  Der Testfall EvenCheck wurde durchlaufen 
+ Die eingegebene Zahl ist gerade  Die eingegebene Zahl ist ungerade  Der Testfall EvenCheck wurde durchlaufen 
+ Es wurde erfolgreich  Der Testfall add wurde durchlaufen 
+ Es wurde erfolgreich  Der Testfall subtract wurde durchlaufen 
+ Die DivisionByZeroNotAllowedException wird geworfen  Es wurde versucht durch Null zu teilen 
+ Es wurde erfolgreich  Der Testfall multiply wurde durchlaufen 
+ Die DivisionByZeroNotAllowedException wurde nicht geworfen  Der Testfall divide wurde durchlaufen 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

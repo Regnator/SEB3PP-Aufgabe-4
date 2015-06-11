@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'jacoco'
+apply plugin: 'application'
+apply plugin: 'checkstyle'
+apply plugin: 'eclipse'
+version = 0.9
+mainClassName = "de.regnator.PP.Rechner"
+repositories {
+mavenCentral()
+maven { url "http://repo.hs-heilbronn.de/maven2Repo" }
+}
+dependencies {
+compile group: 'org.hibernate', name: 'hibernate-core', version: '3.6.7.Final'
+testCompile group: 'junit', name: 'junit', version: '4.+'
+}
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/jacocoHtml"
+    }
+}
+checkstyle {
+ configFile = new File(rootDir, "checkstyle.xml")
+}
