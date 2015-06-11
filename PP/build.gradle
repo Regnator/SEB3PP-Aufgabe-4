@@ -24,3 +24,8 @@ jacocoTestReport {
 checkstyle {
  configFile = new File(rootDir, "checkstyle.xml")
 }
+
+tasks.getByName('build').dependsOn jacocoTestReport
+tasks.getByName('build').dependsOn javadoc
+tasks.getByName('build').dependsOn installDist
+tasks.getByName('build').dependsOn distZip
